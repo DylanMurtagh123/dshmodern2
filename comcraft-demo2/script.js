@@ -1,0 +1,6 @@
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.nav-links');
+toggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close menu':'Open menu')});
+nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle?.setAttribute('aria-expanded','false')}));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelector('#enquiry-form')?.addEventListener('submit',e=>{e.preventDefault();document.getElementById('form-status').textContent='Demo received on this page only. No email was sent — form delivery can be connected when the site is ready to launch.';});
